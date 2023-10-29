@@ -16,7 +16,7 @@ import db.DBConnectionMgr;
 
 public class ServiceMgr {
 	private DBConnectionMgr pool;
-	private static final String SAVEFOLDER = "D:\\04_jsp\\semiPJ\\src\\main\\webapp\\serFicUpload";
+	private static final String SAVEFOLDER = "C:\\webclass\\git\\semiPJ\\src\\main\\webapp\\serFicUpload";
 	private static final String ENCTYPE = "UTF-8";
 	private static final int MAXSIZE = 5*1024*1024*1024;
 	
@@ -56,7 +56,6 @@ public class ServiceMgr {
 	
 	
 	public int getTotalCountCate(String cateKey) {
-		System.out.println(cateKey);
 		int totalCount = 0;
 		try {
 			con = pool.getConnection();
@@ -139,38 +138,6 @@ public class ServiceMgr {
 					pstmt.setInt(3, end);
 				}
 			}
-			rs = pstmt.executeQuery();
-			while(rs.next()) {
-				ServiceBean bean = new ServiceBean();
-				bean.setServ_num(rs.getInt("serv_num"));
-				bean.setServ_name(rs.getString("serv_name"));
-				bean.setServ_category(rs.getString("serv_category"));
-				bean.setRegion(rs.getString("region"));
-				bean.setServ_corp(rs.getString("serv_corp"));
-				bean.setPrice(rs.getInt("price"));
-				bean.setServ_detail(rs.getString("serv_detail"));
-				bean.setFilename(rs.getString("filename"));
-				alist.add(bean);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			pool.freeConnection(con, pstmt, rs);
-		}
-		return alist;
-	}
-	
-	public ArrayList<ServiceBean> getServiceListSearAll(String searKey, int start, int end) {
-		ArrayList<ServiceBean> alist = new ArrayList<ServiceBean>();
-		
-		try {
-			con = pool.getConnection();
-			
-			sql = "select BT2.* from(select rownum R1, BT1.* from(select * from service order by serv_num desc)BT1 where serv_name like ?)BT2 where R1 >= ? and R1 <= ?";
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, "%" + searKey +"%");
-			pstmt.setInt(2, start);
-			pstmt.setInt(3, end);
 			rs = pstmt.executeQuery();
 			while(rs.next()) {
 				ServiceBean bean = new ServiceBean();

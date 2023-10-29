@@ -94,7 +94,6 @@
 				if(bean.getFilename() != null && !bean.getFilename().equals("")) {
 			%>
 				<%=bean.getFilename() %>&emsp;
-				(<%=bean.getFilesize() %> KByte)
 			<%
 				}else {
 					out.print("등록된 파일이 없습니다");

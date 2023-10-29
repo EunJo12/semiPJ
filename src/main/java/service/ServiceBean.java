@@ -9,7 +9,6 @@ public class ServiceBean {
 	private int price;
 	private String serv_detail;
 	private String filename;
-	private int filesize;
 	private String pwd;
 	
 
@@ -61,12 +60,6 @@ public class ServiceBean {
 	}
 	public void setFilename(String filename) {
 		this.filename = filename;
-	}
-	public int getFilesize() {
-		return filesize;
-	}
-	public void setFilesize(int filesize) {
-		this.filesize = filesize;
 	}
 	public String getPwd() {
 		return pwd;
