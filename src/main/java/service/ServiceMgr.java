@@ -160,13 +160,13 @@ public class ServiceMgr {
 	}
 	
 	
-	public void insertBoard(HttpServletRequest req) {			//서블릿 파일에서 request부분 복붙, 변수명은 맘대로
-		MultipartRequest multi = null;							//cos.jar파일이 있어야 import가능
+	public void insertBoard(HttpServletRequest req) {		
+		MultipartRequest multi = null;						
 		String filename = null;
 		
 		try {
 			con = pool.getConnection();
-			File file = new File(SAVEFOLDER);			//JAVA.IO를 임포트하기
+			File file = new File(SAVEFOLDER);		
 			if(!file.exists()) 
 				file.mkdir();				
 			multi = new MultipartRequest(req, SAVEFOLDER, MAXSIZE, ENCTYPE, new DefaultFileRenamePolicy());		//받는 변수, 저장폴더, 사이즈, 타입, 디폴트적용

@@ -52,22 +52,18 @@ function inputCheck() {
 	const id = regFrm.id.value;
     let userinsert1 = /^[a-z][a-z0-9]{3,11}$/i;
 
-console.log(id);
 
     const pwd = regFrm.pwd.value;
     let userinsert2 = /^[0-9a-z#?!@$ %^&*-]{8,15}$/i;
 
 
-console.log(pwd);
     const repwd = regFrm.repwd.value;
 
 
-console.log(id);
     const name = regFrm.name.value;
     let userinsert3 = /^[가-힣]{2,4}$/;
             
             
-console.log(name);
 	if (!userinsert1.test(id)|!userinsert2.test(pwd)|!userinsert3.test(name)|!(pwd == repwd)) {
             alert("잘못 입력된 항목이 있습니다");
             return;

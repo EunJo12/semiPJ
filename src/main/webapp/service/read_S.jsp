@@ -104,9 +104,13 @@
 			</tr>
 			<tr>
 				<%if(id==null){ %>
-				<td colspan="4"><input type="submit" value="예약하기" disabled>로그인하셔야 사용가능합니다</td>
+				<td colspan="4">
+					<input type="submit" value="예약하기" disabled>로그인하셔야 사용가능합니다
+				</td>
 				<%}else{ %>			
-				<td colspan="4"><input type="submit" value="예약하기" id="revBt" disabled>계산하기를 눌러주세요</td>
+				<td colspan="4">
+					<input type="submit" value="예약하기" id="revBt" disabled>계산하기를 눌러주세요
+				</td>
 				<% } %>
 			</tr>
 			<tr>
